@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- pastellust.order tree view -->
+    <record id="pastellust_order_view_tree" model="ir.ui.view">
+        <field name="name">Order Sablon</field>
+        <field name="model">pastellust.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <header>
+                  <button name="confirm" string="Masuk Akunting" class="btn btn-success" type="object"/>
+                  <button name="cancel" string="Keluar Akunting" class="btn btn-warning ml-1" type="object"/>
+                </header>
+                <field name="name"/>
+                <field name="pemesan"/>
+                <field name="phone"/>
+                <field name="tanggal_pesan"/>
+                <field name="tanggal_selesai"/>
+                <field name="jenis_print"/>
+                <field name="area_cetak"/>
+                <field name="ukuran"/>
+                <field name="warna"/>
+                <field name="detailkaos_ids"/>
+                <field name="jml_pesanan"/>
+                <field name="total_harga"/>
+                <field name="img" widget="image"/>
+                <field name="masuk_akunting"/>  
+            </tree>
+        </field>
+    </record>
+
+    <!-- pastellust.order form view -->
+    <record id="pastellust_order_view_form" model="ir.ui.view">
+        <field name="name">pastellust.order.view.form</field>
+        <field name="model">pastellust.order</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="pemesan"/>
+                        <field name="phone"/>
+                        <field name="tanggal_pesan"/>
+                        <field name="tanggal_selesai"/>
+                        <field name="jenis_print"/>
+                        <field name="area_cetak"/>
+                        <field name="ukuran"/>
+                        <field name="warna"/>
+                        <field name="jml_pesanan"/>
+                        <field name="total_harga"/>
+                        <field name="detailkaos_ids">
+                            <tree editable='bottom'>
+                                <field name="jenis_kaos"/>
+                                <field name="harga_satuan"/>
+                                <field name="qty"/>
+                                <field name="harga" sum="Total Tagihan"/>
+                                        
+                            </tree>
+                
+                        </field>
+                        <field name="img" widget="image"/>
+                    </group>
+                    <notebook>
+                        <page string="Deskripsi Jenis Print">
+                            <field name="des_print"/>   
+                        </page>
+                        <page string="Ukuran Area Cetak">
+                            <field name="ukuran_cetak"/>   
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pastellust.order action window -->
+    <record id="pastellust_order_action" model="ir.actions.act_window">
+        <field name="name">Daftar Order Sablon</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pastellust.order</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="pastellust_order_menu_act" 
+        name="Daftar Order" 
+        parent="pastellust_order_menu_categ" 
+        action="pastellust_order_action" 
+        sequence="10"/>
+</odoo>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- pastellust.sablonselesai tree view -->
+    <record id="pastellust_sablonselesai_view_tree" model="ir.ui.view">
+        <field name="name">Pembayaran Tagihan Sablon</field>
+        <field name="model">pastellust.sablonselesai</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="tgl_pesan"/>
+                <field name="tgl_selesai"/>
+                <field name="tagihan"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- pastellust.sablonselesai form view -->
+    <record id="pastellust_sablonselesai_view_form" model="ir.ui.view">
+        <field name="name">Form Pembayaran</field>
+        <field name="model">pastellust.sablonselesai</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="tgl_pesan"/>
+                        <field name="tgl_selesai"/>
+                        <field name="tagihan"/>
+                
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pastellust.sablonselesai action window -->
+    <record id="pastellust_sablonselesai_action" model="ir.actions.act_window">
+        <field name="name">Penyelesaian Sablonan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pastellust.sablonselesai</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="pastellust_sablonselesai_menu_act" 
+        name="Selesai Sablon" 
+        parent="pastellust_order_menu_categ" 
+        action="pastellust_sablonselesai_action" 
+        sequence="20"/>
+</odoo>

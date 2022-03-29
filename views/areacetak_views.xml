@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- pastellust.areacetak tree view -->
+    <record id="pastellust_areacetak_view_tree" model="ir.ui.view">
+        <field name="name">Area Cetak</field>
+        <field name="model">pastellust.areacetak</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="ukuran"/>
+                <field name="harga"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- pastellust.areacetak form view -->
+    <record id="pastellust_areacetak_view_form" model="ir.ui.view">
+        <field name="name">Form Area Cetak</field>
+        <field name="model">pastellust.areacetak</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="ukuran"/>
+                        <field name="harga"/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pastellust.areacetak action window -->
+    <record id="pastellust_areacetak_action" model="ir.actions.act_window">
+        <field name="name">Daftar Area Cetak</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pastellust.areacetak</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="pastellust_areacetak_menu_act" 
+        name="Area Cetak" 
+        parent="pastellust_operasional_menu_categ" 
+        action="pastellust_areacetak_action" 
+        sequence="20"/>
+</odoo>

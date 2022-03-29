@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- pastellust.barangmasuk tree view -->
+    <record id="pastellust_barangmasuk_view_tree" model="ir.ui.view">
+        <field name="name">Barang Masuk</field>
+        <field name="model">pastellust.barangmasuk</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="supplier"/>
+                <field name="tgl_pesan"/>
+                <field name="tgl_datang"/>
+                <field name="tagihan"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- pastellust.barangmasuk form view -->
+    <record id="pastellust_barangmasuk_view_form" model="ir.ui.view">
+        <field name="name">Input Barang Masuk</field>
+        <field name="model">pastellust.barangmasuk</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="supplier"/>
+                        <field name="tgl_pesan"/>
+                        <field name="tgl_datang"/>
+                        <field name="tagihan"/>
+                                
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pastellust.barangmasuk action window -->
+    <record id="pastellust_barangmasuk_action" model="ir.actions.act_window">
+        <field name="name">Barang Masuk</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pastellust.barangmasuk</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="pastellust_barangmasuk_menu_act" 
+        name="Barang Masuk" 
+        parent="pastellust_pembelian_menu_categ" 
+        action="pastellust_barangmasuk_action" 
+        sequence="40"/>
+</odoo>

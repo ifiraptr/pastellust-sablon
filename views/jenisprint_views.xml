@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- pastellust.jenisprint tree view -->
+    <record id="pastellust_jenisprint_view_tree" model="ir.ui.view">
+        <field name="name">Jenis Print</field>
+        <field name="model">pastellust.jenisprint</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="deskripsi"/>
+                <field name="harga"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- pastellust.jenisprint form view -->
+    <record id="pastellust_jenisprint_view_form" model="ir.ui.view">
+        <field name="name">Form Jenis Print</field>
+        <field name="model">pastellust.jenisprint</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="harga"/>
+                        
+                    </group>
+                    <group>
+                        <field name="deskripsi"/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pastellust.jenisprint action window -->
+    <record id="pastellust_jenisprint_action" model="ir.actions.act_window">
+        <field name="name">Daftar Jenis Print</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pastellust.jenisprint</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="pastellust_jenisprint_menu_act" 
+        name="Metode Print" 
+        parent="pastellust_operasional_menu_categ" 
+        action="pastellust_jenisprint_action" 
+        sequence="10"/>
+</odoo>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- pastellust.pesan tree view -->
+    <record id="pastellust_pesan_view_tree" model="ir.ui.view">
+        <field name="name">Pemesanan Barang</field>
+        <field name="model">pastellust.pesan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <header>
+                    <button name="masukakunting" string="Masuk Akunting" class="btn btn-success" type="object"/>
+                    <button name="keluarakunting" string="Keluar Akunting" class="btn btn-warning ml-1" type="object"/>
+                </header>
+                <field name="name"/>
+                <field name="supplier"/>
+                <field name="contact"/>
+                <field name="tanggal_pesan"/>
+                <field name="jml_pesan"/>
+                <field name="tagihan_supplier"/>
+                <field name="masuk_akunting"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- pastellust.pesan form view -->
+    <record id="pastellust_pesan_view_form" model="ir.ui.view">
+        <field name="name">Form Pemesanan Barang</field>
+        <field name="model">pastellust.pesan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="supplier"/>
+                        <field name="contact"/>
+                        <field name="tanggal_pesan"/>
+                        <field name="jml_pesan"/>
+                        <field name="tagihan_supplier"/>
+                                
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pastellust.pesan action window -->
+    <record id="pastellust_pesan_action" model="ir.actions.act_window">
+        <field name="name">Pemesanan Barang</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pastellust.pesan</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="pastellust_belanja_menu_act" 
+        name="Belanja Barang" 
+        parent="pastellust_pembelian_menu_categ" 
+        action="pastellust_pesan_action" 
+        sequence="30"/>
+</odoo>

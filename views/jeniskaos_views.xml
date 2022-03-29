@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- pastellust.jeniskaos tree view -->
+    <record id="pastellust_jeniskaos_view_tree" model="ir.ui.view">
+        <field name="name">Jenis Kaos</field>
+        <field name="model">pastellust.jeniskaos</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="stok"/>
+                <field name="harga"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- pastellust.jeniskaos form view -->
+    <record id="pastellust_jeniskaos_view_form" model="ir.ui.view">
+        <field name="name">Form Jenis Kaos</field>
+        <field name="model">pastellust.jeniskaos</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="stok"/>
+                        <field name="harga"/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pastellust.jeniskaos action window -->
+    <record id="pastellust_jeniskaos_action" model="ir.actions.act_window">
+        <field name="name">Daftar Jenis Kaos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pastellust.jeniskaos</field>
+        <field name="view_mode">tree,form</field>
+       
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="pastellust_jeniskaos_menu_act" 
+        name="Kaos" 
+        parent="pastellust_operasional_menu_categ" 
+        action="pastellust_jeniskaos_action" 
+        sequence="30"/>
+</odoo>

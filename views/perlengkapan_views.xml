@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- pastellust.perlengkapan tree view -->
+    <record id="pastellust_perlengkapan_view_tree" model="ir.ui.view">
+        <field name="name">Bahan dan Alat Sablon</field>
+        <field name="model">pastellust.perlengkapan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="harga"/>
+                <field name="stok"/>
+                <field name="suppliernya"/>
+                <field name="telp"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- pastellust.perlengkapan form view -->
+    <record id="pastellust_perlengkapan_view_form" model="ir.ui.view">
+        <field name="name">Form Perlengkapan</field>
+        <field name="model">pastellust.perlengkapan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="harga"/>
+                        <field name="stok"/>
+                        <field name="suppliernya"/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- pastellust.perlengkapan action window -->
+    <record id="pastellust_perlengkapan_action" model="ir.actions.act_window">
+        <field name="name">Bahan dan Alat Sablon</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pastellust.perlengkapan</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="pastellust_perlengkapan_menu_act" 
+        name="Bahan dan Alat" 
+        parent="pastellust_pembelian_menu_categ" 
+        action="pastellust_perlengkapan_action" 
+        sequence="20"/>
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- pastellust.supplier tree view -->
+    <record id="pastellust_supplier_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Supplier</field>
+        <field name="model">pastellust.supplier</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="alamat"/>
+                <field name="cp"/>
+                <field name="bahanalat"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- pastellust.supplier form view -->
+    <record id="pastellust_supplier_view_form" model="ir.ui.view">
+        <field name="name">Form Daftar Supplier</field>
+        <field name="model">pastellust.supplier</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="alamat"/>
+                        <field name="cp"/>
+                        
+                    </group>
+                    <notebook>
+                        <page name="bahan_alat" string="Barang Supply">
+                            <field name="bahanalat">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="harga"/>
+                                    <field name="stok"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pastellust.supplier action window -->
+    <record id="pastellust_supplier_action" model="ir.actions.act_window">
+        <field name="name">Daftar Supplier</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pastellust.supplier</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="pastellust_supplier_menu_act" 
+        name="Daftar Supplier" 
+        parent="pastellust_pembelian_menu_categ" 
+        action="pastellust_supplier_action" 
+        sequence="10"/>
+</odoo>

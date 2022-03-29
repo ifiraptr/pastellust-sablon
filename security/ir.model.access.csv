@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pastellust_jenisprint,access.pastellust.jenisprint,model_pastellust_jenisprint,,1,1,1,1
+access_pastellust_areacetak,access.pastellust.areacetak,model_pastellust_areacetak,,1,1,1,1
+access_pastellust_jeniskaos,access.pastellust.jeniskaos,model_pastellust_jeniskaos,,1,1,1,1
+access_pastellust_order,access.pastellust.order,model_pastellust_order,,1,1,1,1
+access_pastellust_detailkaos,access.pastellust.detailkaos,model_pastellust_detailkaos,,1,1,1,1
+access_pastellust_sablonselesai,access.pastellust.sablonselesai,model_pastellust_sablonselesai,,1,1,1,1
+access_pastellust_supplier,access.pastellust.supplier,model_pastellust_supplier,,1,1,1,1
+access_pastellust_perlengkapan,access.pastellust.perlengkapan,model_pastellust_perlengkapan,,1,1,1,1
+access_pastellust_pesan,access.pastellust.pesan,model_pastellust_pesan,,1,1,1,1
+access_pastellust_barangmasuk,access.pastellust.barangmasuk,model_pastellust_barangmasuk,,1,1,1,1
+access_pastellust_akunting,access.pastellust.akunting,model_pastellust_akunting,,1,1,1,1

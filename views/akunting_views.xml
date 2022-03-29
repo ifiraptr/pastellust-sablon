@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- pastellust.akunting tree view -->
+    <record id="pastellust_akunting_view_tree" model="ir.ui.view">
+        <field name="name">Akunting</field>
+        <field name="model">pastellust.akunting</field>
+        <field name="arch" type="xml">
+            <tree create="false" delete="false">
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="id_ak"/>
+                <field name="date"/>
+                <field name="debet"/>
+                <field name="kredit"/>
+                <field name="saldo"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- pastellust.akunting form view -->
+    <record id="pastellust_akunting_view_form" model="ir.ui.view">
+        <field name="name">pastellust.akunting.view.form</field>
+        <field name="model">pastellust.akunting</field>
+        <field name="arch" type="xml">
+            <form string="Detail Akunting" edit="false" create="false" delete="false">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="id_ak"/>
+                        <field name="date"/>
+                        <field name="debet"/>
+                        <field name="kredit"/>
+                        <field name="saldo"/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pastellust.akunting action window -->
+    <record id="pastellust_akunting_action" model="ir.actions.act_window">
+        <field name="name">Akunting Pastellust Sablon</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pastellust.akunting</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>
+
+    <function model="pastellust.akunting" name="compute_id_ak"/>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="pastellust_akunting_menu_act" 
+        name="Akunting" 
+        parent="pastellust_menu_root" 
+        action="pastellust_akunting_action" 
+        sequence="50"/>
+</odoo>
